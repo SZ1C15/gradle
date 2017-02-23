@@ -22,7 +22,7 @@ import spock.lang.Unroll
 class IdeIntegrationPerformanceTest extends AbstractCrossVersionPerformanceTest {
 
     @Unroll
-    def "eclipse onf #testProject"() {
+    def "eclipse on #testProject"() {
         given:
         runner.testProject = testProject
         runner.tasksToRun = ['eclipse']
@@ -37,7 +37,7 @@ class IdeIntegrationPerformanceTest extends AbstractCrossVersionPerformanceTest 
         where:
         testProject                  | memory
         "largeMonolithicJavaProject" | '256m'
-        "largeJavaMultiProject"      | '256m'
+        "largeJavaMultiProject"      | '768m'
     }
 
     @Unroll
@@ -56,6 +56,6 @@ class IdeIntegrationPerformanceTest extends AbstractCrossVersionPerformanceTest 
         where:
         testProject                  | memory
         "largeMonolithicJavaProject" | '256m'
-        "largeJavaMultiProject"      | '256m'
+        "largeJavaMultiProject"      | '768m'
     }
 }
